@@ -13,41 +13,36 @@ defineProps({
     <h3>Change the numbers in checkout</h3>
     <div>
       Eggs
-      <button @click="increment">+</button>
+      <button v-on:click="count++">+</button>
 
-      <button @click="decrement">-</button>
+      <button v-on:click="count--">-</button>
       :
       {{ count }}
     </div>
     <div>
       Bread
-      <button @click="increment">+</button>
-      <button @click="decrement">-</button>
+      <button @click="count2++">+</button>
+      <button @click="count2--">-</button>
       :
-      {{ count }}
+      {{ count2 }}
+    </div>
+    <div>
+      Cheese
+      <button @click="count3++">+</button>
+      <button @click="count3--">-</button>
+      :
+      {{ count3 }}
     </div>
   </div>
 </template>
 <script>
 export default {
-  data: () => {
+  data() {
     return {
-      counters: {
-        counter1: 0,
-        counter2: 0,
-        counter3: 0,
-      },
+      count: 0,
+      count2: 0,
+      count3: 0,
     }
-  },
-  methods: {
-    increment() {
-      this.count++
-    },
-    decrement() {
-      if (this.count > 0) {
-        this.count--
-      }
-    },
   },
 }
 </script>
