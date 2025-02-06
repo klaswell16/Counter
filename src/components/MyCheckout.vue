@@ -13,9 +13,31 @@ defineProps({
     <div>
       <p>
         Eggs
-        <button style="width: 70px; height: 50px" v-on:click="count++">+</button>
+        <button
+          style="
+            background-color: gray;
+            border: 2px solid black;
+            border-radius: 8px;
+            width: 50px;
+            height: 40px;
+          "
+          v-on:click="count++"
+        >
+          +
+        </button>
 
-        <button style="width: 70px; height: 50px" v-on:click="count--">-</button>
+        <button
+          style="
+            background-color: gray;
+            border: 2px solid black;
+            border-radius: 8px;
+            width: 50px;
+            height: 40px;
+          "
+          v-on:click="count--"
+        >
+          -
+        </button>
         :
         {{ count }}
       </p>
@@ -23,8 +45,30 @@ defineProps({
     <div>
       <p>
         Bread
-        <button style="width: 70px; height: 50px" @click="count2++">+</button>
-        <button style="width: 70px; height: 50px" @click="count2--">-</button>
+        <button
+          style="
+            background-color: gray;
+            border: 2px solid black;
+            border-radius: 8px;
+            width: 50px;
+            height: 40px;
+          "
+          @click="count2++"
+        >
+          +
+        </button>
+        <button
+          style="
+            background-color: gray;
+            border: 2px solid black;
+            border-radius: 8px;
+            width: 50px;
+            height: 40px;
+          "
+          @click="count2--"
+        >
+          -
+        </button>
         :
         {{ count2 }}
       </p>
@@ -32,8 +76,30 @@ defineProps({
     <div>
       <p>
         Cheese
-        <button style="width: 70px; height: 50px" @click="count3++">+</button>
-        <button style="width: 70px; height: 50px" @click="count3--">-</button>
+        <button
+          style="
+            background-color: gray;
+            border: 2px solid black;
+            border-radius: 8px;
+            width: 50px;
+            height: 40px;
+          "
+          @click="count3++"
+        >
+          +
+        </button>
+        <button
+          style="
+            background-color: gray;
+            border: 2px solid black;
+            border-radius: 8px;
+            width: 50px;
+            height: 40px;
+          "
+          @click="count3--"
+        >
+          -
+        </button>
         :
         {{ count3 }}
       </p>
