@@ -10,7 +10,7 @@ defineProps({
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
-    <h3>Change the numbers in checkout</h3>
+    <h3>Press the buttons</h3>
     <div>
       Eggs
       <button v-on:click="count++">+</button>
@@ -55,7 +55,7 @@ h1 {
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 .greetings h1,
