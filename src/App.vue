@@ -1,17 +1,5 @@
-<script setup>
-import HelloWorld from './components/MyCheckout.vue'
-import Gallery from './components/MyGallery.vue'
-</script>
+<script setup></script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <HelloWorld msg="Hello World!" />
-      <Gallery />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <router-view />
 </template>
