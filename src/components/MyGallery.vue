@@ -1,16 +1,13 @@
 <template>
   <div>
-    <!-- Thumbnail Images -->
     <div class="gallery">
-      <img
-        v-for="(image, index) in images"
-        :key="index"
-        :src="image.src"
-        :alt="image.alt"
-        :class="{ enlarged: selectedImage === index }"
-        @click="toggleEnlarge(index)"
-        class="thumbnail"
-      />
+      <img :src="snow" :alt="Snow" @click="toggleEnlarge(snow)" class="thumbnail" />
+      <img :src="snow2" :alt="Snow2" @click="toggleEnlarge(snow2)" class="thumbnail" />
+      <img :src="snow3" :alt="Snow3" @click="toggleEnlarge(snow3)" class="thumbnail" />
+    </div>
+
+    <div v-if="selectedImage" class="enlarged-space">
+      <img :src="selectedImage" :alt="EnlargedImage" class="enlarged-image" />
     </div>
   </div>
 </template>
@@ -18,29 +15,17 @@
 <script setup>
 import { ref } from 'vue'
 
-// Import images
 import snow from '@/assets/snow.jpg'
 import snow2 from '@/assets/snow2.jpg'
 import snow3 from '@/assets/snow3.jpg'
 
-// Define the images array
-const images = [
-  { src: snow, alt: 'Snow' },
-  { src: snow2, alt: 'Snow2' },
-  { src: snow3, alt: 'Snow3' },
-]
-
-// Track the selected image index
 const selectedImage = ref(null)
 
-// Function to toggle image enlargement
-const toggleEnlarge = (index) => {
-  if (selectedImage.value === index) {
-    // Clicking the same image again will close it
+const toggleEnlarge = (image) => {
+  if (selectedImage.value === image) {
     selectedImage.value = null
   } else {
-    // Enlarge the clicked image
-    selectedImage.value = index
+    selectedImage.value = image
   }
 }
 </script>
@@ -64,13 +49,13 @@ const toggleEnlarge = (index) => {
   transform: scale(1.05);
 }
 
-.thumbnail.enlarged {
-  width: 400px;
-  height: 400px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
+.enlarged-space {
+  margin-top: 20px;
+}
+
+.enlarged-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
 }
 </style>
